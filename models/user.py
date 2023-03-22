@@ -1,19 +1,3 @@
-Idreex
-/
-AirBnB_clone_v2
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-AirBnB_clone_v2/models/user.py
-@Idreex
-Idreex rechecking and fixing
- 1 contributor
-Executable File  27 lines (25 sloc)  953 Bytes
 #!/usr/bin/python3
 """This is the user class"""
 from sqlalchemy.ext.declarative import declarative_base
