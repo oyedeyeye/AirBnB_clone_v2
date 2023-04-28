@@ -17,26 +17,26 @@ You must use the option `strict_slashes=False` in your route definition
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
 
 
-@app.route('/')
+@app.route('/', strict_slashes = False)
 def hello():
+    """/: display 'Hello HBNB!'"""
     return "Hello HBNB!"
 
 
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes = False)
 def hbnb():
     return "HBNB"
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes = False)
 def show_c_text(text):
     return "C {}".format(text.replace('_', ' '))
 
 
-@app.route('/python')
-@app.route('/python/<text>')
+@app.route('/python', strict_slashes = False)
+@app.route('/python/<text>', strict_slashes = False)
 def show_python_text(text="is cool"):
     return "Python {}".format(text.replace('_', ' '))
 
