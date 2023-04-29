@@ -6,7 +6,7 @@ use storage for fetching data from the storage engine
 Routes:
 /states_list: display a HTML page: (inside the tag BODY)
 H1 tag: “States”
-UL tag: with the list of all State objects present in DBStorage sorted by name (A->Z) tip
+UL tag: list of all State objects present in DBStorage sorted by name(A->Z)
 LI tag: description of one State: <state.id>: <B><state.name></B>
 Import this 7-dump to have some data
 You must use the option strict_slashes=False in your route definition
@@ -20,18 +20,20 @@ from models.state import State
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.teardown_appcontext
 def close_storage(exc):
     """close the database connection"""
     storage.close()
 
+
 @app.route('/states_list')
 def states_list():
     """display a HTML page: (inside the tag BODY)
-    H1 tag: “States”
-    UL tag: with the list of all State objects present in DBStorage sorted by name (A->Z) tip
-    LI tag: description of one State: <state.id>: <B><state.name></B>"""
-    states = storage.all(State).value()
+    H1: “States”
+    UL: list of all State objects present in DBStorage sorted by name(A->Z)
+    LI: description of one State: <state.id>: <B><state.name></B>"""
+    states = storage.all(State).values()
     return render_template('7-states_list.html', states=states)
 
 
