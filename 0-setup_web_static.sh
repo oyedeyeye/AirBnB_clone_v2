@@ -9,7 +9,7 @@ echo "<!DOCTYPE html>
   <head>
   </head>
   <body>
-    <p>Nginx server test</p>
+    <p>ALX C9 Test</p>
   </body>
 </html>" | tee /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
