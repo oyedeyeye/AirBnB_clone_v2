@@ -11,7 +11,7 @@ echo "<!DOCTYPE html>
   <body>
     <p>ALX C9 Test</p>
   </body>
-</html>" | tee /data/web_static/releases/test/index.html
+</html>" | sudo tee /data/web_static/releases/test/index.html > /dev/null
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu:ubuntu /data
 sudo sed -i '39 i\ \tlocation /hbnb_static {\n\t\talias /data/web_static/current;\n\t}\n' /etc/nginx/sites-enabled/default
